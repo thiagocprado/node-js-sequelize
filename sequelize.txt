@@ -1,0 +1,40 @@
+sequelize-cli:
+
+O Sequelize possui um utilitário de linha de comando chamado Sequelize CLI que auxilia em diversas atividades 
+ligadas aos models da nossa aplicação, incluindo funcionalidades para nos ajudar com migrations.
+
+Esse utilitário permite que você gere automaticamente models,
+que você crie as tabelas no banco e que você crie e execute migrations automaticamente. 
+
+ex:
+
+sequelize db:migrate 
+sequelize db:migrate:undo 
+
+npx sequelize-cli init - inicia as pastas do sequelize e sua configuração incial
+
+o .sequelizerc server para configurarmos os caminhos das pastas geradas automaticamente pelo sequelize
+
+ORM significa Mapeador de Objeto Relacional (em uma tradução livre) e usamos para isolar a camada relacional de dados do restante da aplicação
+O ORM é responsável por se conectar ao banco, converter os métodos e funções em queries e resolver as queries com o banco.
+
+
+ORMs oferecem uma interface única, que pode ser utilizada para vários bancos de dados relacionais diferentes
+Ao usar um ORM para escrever a aplicação, o ORM fará toda a “tradução” para linguagem do banco e resolverá os comandos e queries. Se for necessário migrar de um banco SQL para outro, é possível fazer isso sem mudanças no código.
+
+Os bancos de dados relacionais, embora compartilhem de uma mesma linguagem (o SQL), têm diferentes dialetos, então os comandos e palavras-chave que utilizamos para dar comandos ao banco podem ser diferentes entre eles. Usando um ORM como o Sequelize, quem desenvolve só precisa usar os métodos do próprio Sequelize, e a aplicação vai “traduzir” o comando para o banco usando o dialeto correto.
+
+SQL migration, é a migração de dados mesmo. É quando mudamos, transferimos nossos dados de uma plataforma para outra. Mudou o banco de dados, mudou o serviço. Normalmente, os bancos de dados são umas entidades complexas, dependendo ainda da empresa que você trabalha, do projeto, esse banco pode ser bem grande. Migrar, transportar esses dados pode ser complicado, uma operação delicada.
+
+
+migração de dados: transferência de dados entre plataformas
+migração com ORM: alterações incrementais e rastreáveis no banco
+
+mudanças no esquema (migrations):
+
+coordenar alterações feitas por diferentes pessoas do time nas tabelas do banco
+rastrear (e reverter) alterações feitas no banco para debugar conflitos e erros.
+
+
+
+no tipo data do sequelize, usar DATEONLY na hora de gerar a model, se não ele vai exigir hora também
